@@ -5,8 +5,11 @@ require 'sinatra/reloader'
 random_int = rand(100)
 
 get '/' do
-  def guess_message(guess, random_int)
-    difference = (random_int - guess).abs
+  def difference(guess, random_int)
+    difference = (random_int - guess).abs 
+  end
+  
+  def guess_message(guess, random_int, difference)
     
     if guess > random_int  
       if difference > 5
@@ -26,9 +29,12 @@ get '/' do
   end
 
   guess = params['guess'].to_i
+  difference = difference(guess, random_int)
+  message = guess_message(guess, random_int, difference)
 
-  message = guess_message(guess, random_int)
-
-  erb :index, :locals => {:random_int => random_int, :message => message}
+  erb :index, :locals => {:random_int => random_int, 
+                          :message => message, 
+                          :difference => difference
+                        }
 end
 

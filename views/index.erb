@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		body {
+			margin-top: 50%;
+			margin-left: 50%;
+			<% case difference
+				when 6...100 %>
+					background: #ff0000;
+				<% when 1..5 %>
+					background: #ff6666;
+			<% end %>
+			}
+	</style>
 	<title></title>
 </head>
 <body>
@@ -10,6 +22,7 @@
 	</form>
 	<!-- <h1>"The SECRET NUMBER is <%= random_int %> where #{random_int} is the secret number."</h1>
 	 -->
+	
 	<%= message %>
 
 </body>
