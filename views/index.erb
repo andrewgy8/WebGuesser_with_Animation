@@ -3,8 +3,8 @@
 <head>
 	<style>
 		body {
-			margin-top: 50%;
-			margin-left: 50%;
+			margin-top: 25%;
+			margin-left: 25%;
 			<% case difference
 				when 6...100 %>
 					background: #ff0000;
@@ -41,18 +41,25 @@
 			    50%{background-position:84% 100%}
 			    100%{background-position:17% 0%}
 			}
+		footer {
+			margin-top: 100%;
+			margin-left: 0%;
+
+		}
 	</style>
 	<title></title>
 </head>
 <body>
+	<h1>Please guess the number that the computer generates Randomly </h1>
 	<form>
 		<input type="text" name="guess">
 		<input type="submit" name="Guess!">
 	</form>
 	<!-- <h1>"The SECRET NUMBER is <%= random_int %> where #{random_int} is the secret number."</h1>
 	 -->
+	 
 	
 	<%= message %>
-
+	<footer><span>Created following the JumpStartLabs' Sinatra course.</span></footer>
 </body>
 </html>
